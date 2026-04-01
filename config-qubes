@@ -65,11 +65,13 @@ CONFIG_STACKPROTECTOR_STRONG=y
 
 
 ################################################################################
-## Disable PCI hotplug to prevent DMA attacks via ExpressCard or Thunderbolt
+## NOTE: PCI hotplug may enable DMA attacks via ExpressCard or Thunderbolt
 ## ports. QubesOS/qubes-issues#1673
+###
 
-# CONFIG_HOTPLUG_PCI is not set
-
+CONFIG_HOTPLUG_PCI=y
+CONFIG_HOTPLUG_PCI_PCIE=y
+CONFIG_HOTPLUG_PCI_ACPI=y
 
 ################################################################################
 ## Deactivate selinux by default
